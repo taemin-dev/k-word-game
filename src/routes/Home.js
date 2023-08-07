@@ -8,7 +8,9 @@ function Home() {
       <Link to="/tutorial">
         <Button text="튜토리얼" />
       </Link>
-      <Button text="게임 시작" />
+      <Link to="/game">
+        <Button text="게임 시작" />
+      </Link>
     </div>
   );
 }
