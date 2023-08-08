@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import wordsJson from "../words.json";
 import styles from "./Game.module.css";
+import { Redirect } from "react-router-dom";
 
 function Game() {
   const [words, setWords] = useState([]);
   const [round, setRound] = useState(1);
   const [clicked, setClicked] = useState(false);
+  const [clear, setClear] = useState(false);
+  const [over, setOver] = useState(false);
 
   const { chinese, pureK } = wordsJson;
   const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
@@ -21,6 +24,8 @@ function Game() {
         newPureK.pop(),
       ]);
       setWords(newWords);
+    } else {
+      setOver(true);
     }
   };
 
@@ -53,12 +58,17 @@ function Game() {
       setTimeout(changeWords, 3000);
       if (round < 5) {
         setTimeout(roundUp, 3000);
+      } else {
+        const gameclear = () => setClear(true);
+        setTimeout(gameclear, 3000);
       }
     }
   };
 
   return (
     <div>
+      {clear ? <Redirect to="/game/clear" /> : null}
+      {over ? <Redirect to="/game/over" /> : null}
       <h2>Round: {round}</h2>
       {words ? (
         <div className={styles.cards}>

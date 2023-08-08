@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   color: white;
+  box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.4);
 }
 
 .card__word {

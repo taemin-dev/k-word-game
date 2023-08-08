@@ -2,24 +2,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Tutorial from "./routes/Tutorial";
 import Game from "./routes/Game";
-import Gameover from "./routes/Gameover";
+import End from "./routes/End";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/game/over">
-          <Gameover />
-        </Route>
-        <Route path="/game">
-          <Game />
-        </Route>
-        <Route path="/tutorial">
-          <Tutorial />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+        <Route path="/game/:type" component={End} />
+        <Route path="/game" component={Game} />
+        <Route path="/tutorial" component={Tutorial} />
+        <Route path="/" component={Home} />
       </Switch>
     </Router>
   );
