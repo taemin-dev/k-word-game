@@ -23,6 +23,50 @@
     {
       "word": "사자",
       "chChar": "獅[사자 사] 子[아들 자]"
+    },
+    {
+      "word": "책",
+      "chChar": "冊[책 책]"
+    },
+    {
+      "word": "연필",
+      "chChar": "鉛[납 연] 筆[붓 필]"
+    },
+    {
+      "word": "지금",
+      "chChar": "只[다만 지] 今[이제 금]"
+    },
+    {
+      "word": "도대체",
+      "chChar": "都[도읍 도] 大[큰 대] 體[몸 체]"
+    },
+    {
+      "word": "감기",
+      "chChar": "感[느낄 감] 氣[기운 기]"
+    },
+    {
+      "word": "농담",
+      "chChar": "弄[희롱할 롱] 談[말씀 담]"
+    },
+    {
+      "word": "덕분",
+      "chChar": "德[큰 덕] 分[나눌 분]"
+    },
+    {
+      "word": "미안",
+      "chChar": "未[아닐 미] 安[편안 안]"
+    },
+    {
+      "word": "생선",
+      "chChar": "生[날 생] 鮮[고울 선]"
+    },
+    {
+      "word": "시작",
+      "chChar": "始[비로소 시] 作[지을 작]"
+    },
+    {
+      "word": "양말",
+      "chChar": "洋[큰 바다 양] 襪[버선 말]"
     }
   ],
   "pureK": [
@@ -32,6 +76,54 @@
     },
     {
       "word": "새벽",
+      "chChar": null
+    },
+    {
+      "word": "열쇠",
+      "chChar": null
+    },
+    {
+      "word": "고라니",
+      "chChar": null
+    },
+    {
+      "word": "노을",
+      "chChar": null
+    },
+    {
+      "word": "대가리",
+      "chChar": null
+    },
+    {
+      "word": "모래",
+      "chChar": null
+    },
+    {
+      "word": "밤낮",
+      "chChar": null
+    },
+    {
+      "word": "수풀",
+      "chChar": null
+    },
+    {
+      "word": "진흙",
+      "chChar": null
+    },
+    {
+      "word": "참기름",
+      "chChar": null
+    },
+    {
+      "word": "콩팥",
+      "chChar": null
+    },
+    {
+      "word": "톱니",
+      "chChar": null
+    },
+    {
+      "word": "한글",
       "chChar": null
     }
   ]

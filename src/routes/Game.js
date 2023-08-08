@@ -5,6 +5,8 @@ import styles from "./Game.module.css";
 import { Redirect } from "react-router-dom";
 
 function Game() {
+  console.log(wordsJson);
+
   const [words, setWords] = useState([]);
   const [round, setRound] = useState(1);
   const [clicked, setClicked] = useState(false);
@@ -14,7 +16,7 @@ function Game() {
   const { chinese, pureK } = wordsJson;
   const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
   const changeWords = () => {
-    if (chinese.length > 0 && pureK.length > 0) {
+    if (chinese.length >= 3 && pureK.length >= 1) {
       const newChinese = shuffle(chinese);
       const newPureK = shuffle(pureK);
       const newWords = shuffle([
@@ -55,8 +57,8 @@ function Game() {
     if (!clicked) {
       clickChange();
       setTimeout(clickChange, 3000);
-      setTimeout(changeWords, 3000);
       if (round < 5) {
+        setTimeout(changeWords, 3000);
         setTimeout(roundUp, 3000);
       } else {
         const gameclear = () => setClear(true);

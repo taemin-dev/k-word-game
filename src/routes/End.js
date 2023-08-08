@@ -9,9 +9,9 @@ function End() {
       <Link to="/">
         <Button text="홈" />
       </Link>
-      <Link to="/game">
+      <a href="/game">
         <Button text="게임 시작" />
-      </Link>
+      </a>
     </div>
   );
 }
