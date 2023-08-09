@@ -7,4 +7,5 @@
 
 .button:hover {
   border-radius: 30px;
+  cursor: pointer;
 }
