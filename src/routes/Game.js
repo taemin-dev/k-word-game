@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import wordsJson from "../words.json";
 import styles from "./css/Game.module.css";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import Alarm from "../components/Alarm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 function Game() {
-  console.log(wordsJson);
-
   const [words, setWords] = useState([]);
   const [round, setRound] = useState(1);
   const [clicked, setClicked] = useState(false);
@@ -123,6 +123,9 @@ function Game() {
       {wrong ? (
         <Alarm text="오답" bgColor1="#F44336" bgColor2="#FF5722" icon="x" />
       ) : null}
+      <Link to="/">
+        <FontAwesomeIcon className={styles.homeIcon} icon={faHouse} size="2x" />
+      </Link>
       {words ? (
         <div className={styles.cards}>
           {words.map((item) => {

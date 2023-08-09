@@ -7,7 +7,7 @@ function Home() {
     <div className={styles.container}>
       <h1 className={styles.title}>고유어를 찾아라!</h1>
       <Link to="/tutorial">
-        <Button className={styles.button} text="튜토리얼" />
+        <Button className={styles.button} text="게임 설명" />
       </Link>
       <a href="/game">
         <Button className={styles.button} text="게임 시작" />

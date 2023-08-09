@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(45deg, grey, lightgrey 33%, white 66%);
+  padding-top: 60px;
+}
+
+@keyframes icon-move {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+.homeIcon,
+.playIcon {
+  position: fixed;
+  font-size: 40px;
+  color: #dddddd;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+  transition: 0.5s ease-in-out;
+}
+
+.homeIcon {
+  top: 45px;
+  right: 30px;
+}
+
+.playIcon {
+  top: 120px;
+  right: 35px;
+}
+
+.homeIcon:hover,
+.playIcon:hover {
+  font-size: 50px;
+  animation: icon-move 1s infinite;
+}

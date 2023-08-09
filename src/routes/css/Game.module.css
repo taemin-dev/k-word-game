@@ -45,10 +45,43 @@
     linear-gradient(45deg, #03a9f4, #b3e5fc);
   background-origin: border-box;
   background-clip: content-box, border-box;
+  transition: 250ms ease-in-out;
+}
+
+.round__circle:hover {
+  width: 60px;
+  height: 60px;
 }
 
 .round__circle__full {
   background: linear-gradient(45deg, #03a9f4, #b3e5fc);
   color: white;
   border: 0;
+}
+
+@keyframes home-move {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+.homeIcon {
+  position: absolute;
+  font-size: 40px;
+  color: #dddddd;
+  top: 30px;
+  right: 30px;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+  transition: 0.5s ease-in-out;
+}
+
+.homeIcon:hover {
+  font-size: 50px;
+  animation: home-move 1s infinite;
 }
