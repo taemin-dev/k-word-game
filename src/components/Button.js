@@ -1,21 +1,22 @@
 import PropTypes from "prop-types";
+import styles from "./Button.module.css";
 
 function Button({
+  className,
   text,
   fontSize = 24,
   textColor = "white",
-  bgColor1 = "#448AFF",
-  bgColor2 = "#03A9F4",
+  bgColor1 = "#448aff",
+  bgColor2 = "#b3e5fc",
 }) {
   return (
     <button
+      className={`${styles.button} ${className}`}
       style={{
         padding: "5px 10px",
         background: `linear-gradient(45deg, ${bgColor1}, ${bgColor2})`,
         color: textColor,
         fontSize,
-        border: "none",
-        borderRadius: 10,
       }}
     >
       {text}

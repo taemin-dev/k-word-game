@@ -1,0 +1,10 @@
+.button {
+  border: none;
+  border-radius: 10px;
+  transition: 250ms ease-in-out;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.button:hover {
+  border-radius: 30px;
+}
