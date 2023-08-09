@@ -1,4 +1,4 @@
-import styles from "./Card.module.css";
+import styles from "./css/Card.module.css";
 import PropTypes from "prop-types";
 
 function Card({ text, chinese, onClick, isClicked }) {

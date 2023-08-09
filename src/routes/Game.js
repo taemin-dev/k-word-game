@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import wordsJson from "../words.json";
-import styles from "./Game.module.css";
+import styles from "./css/Game.module.css";
 import { Redirect } from "react-router-dom";
 import Alarm from "../components/Alarm";
 

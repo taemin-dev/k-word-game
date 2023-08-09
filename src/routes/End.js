@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import Button from "../components/Button";
-import styles from "./End.module.css";
+import styles from "./css/End.module.css";
 
 function End() {
   const { type } = useParams();

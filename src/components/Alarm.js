@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "./Alarm.module.css";
+import styles from "./css/Alarm.module.css";
 import { faCheck, faX } from "@fortawesome/free-solid-svg-icons";
 
 function Alarm({ text, bgColor1, bgColor2, icon }) {
