@@ -59,6 +59,14 @@
   border: 0;
 }
 
+.count {
+  position: absolute;
+  top: 40px;
+  right: 150px;
+  color: grey;
+  font-size: 20px;
+}
+
 @keyframes home-move {
   0% {
     transform: translateY(-5px);

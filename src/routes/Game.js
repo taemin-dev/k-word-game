@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 function Game() {
+  const [count, setCount] = useState(0);
   const [words, setWords] = useState([]);
   const [round, setRound] = useState(1);
   const [clicked, setClicked] = useState(false);
@@ -19,6 +20,7 @@ function Game() {
   const { chinese, pureK } = wordsJson;
   const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
   const changeWords = () => {
+    console.log(chinese.length, pureK.length);
     if (chinese.length >= 3 && pureK.length >= 1) {
       const newChinese = shuffle(chinese);
       const newPureK = shuffle(pureK);
@@ -29,6 +31,7 @@ function Game() {
         newPureK.pop(),
       ]);
       setWords(newWords);
+      setCount(chinese.length + pureK.length);
     } else {
       setOver(true);
     }
@@ -48,6 +51,7 @@ function Game() {
   const clickChange = () => setClicked((prev) => !prev);
   const correctChange = () => setCorrect((prev) => !prev);
   const wrongChange = () => setWrong((prev) => !prev);
+  //const countdown = () => setCount((prev) => prev - 4);
   const chineseOnClick = (event) => {
     if (!clicked) {
       clickChange();
@@ -55,6 +59,7 @@ function Game() {
       setTimeout(clickChange, 3000);
       setTimeout(wrongChange, 3000);
       setTimeout(changeWords, 3000);
+      //setTimeout(countdown, 3000);
       if (round > 1) {
         setTimeout(roundDown, 3000);
       }
@@ -66,6 +71,7 @@ function Game() {
       correctChange();
       setTimeout(clickChange, 3000);
       setTimeout(correctChange, 3000);
+      //setTimeout(countdown, 3000);
       if (round < 5) {
         setTimeout(changeWords, 3000);
         setTimeout(roundUp, 3000);
@@ -123,6 +129,7 @@ function Game() {
       {wrong ? (
         <Alarm text="오답" bgColor1="#F44336" bgColor2="#FF5722" icon="x" />
       ) : null}
+      <span className={styles.count}>남은 단어 : {count}</span>
       <Link to="/">
         <FontAwesomeIcon className={styles.homeIcon} icon={faHouse} size="2x" />
       </Link>
