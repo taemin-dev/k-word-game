@@ -22,6 +22,7 @@ function Game() {
   const randomChineseWord = () =>
     chinese[Math.floor(Math.random() * chinese.length)];
   const randomPureKWord = () => pureK[Math.floor(Math.random() * pureK.length)];
+  const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
   const changeWords = () => {
     if (chinese.length + pureK.length - banned.length > 0) {
       let newChinese = [];
@@ -44,9 +45,9 @@ function Game() {
         }
       }
 
-      let newWords = [...newChinese, ...newPureK];
+      const newWords = [...newChinese, ...newPureK];
 
-      setWords(newWords);
+      setWords(shuffle(newWords));
 
       setCount(chinese.length + pureK.length - banned.length);
     } else {
