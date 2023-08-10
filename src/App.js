@@ -8,10 +8,13 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/game/:type" component={End} />
-        <Route path="/game" component={Game} />
-        <Route path="/tutorial" component={Tutorial} />
-        <Route path="/" component={Home} />
+        <Route path={`${process.env.PUBLIC_URL}/game/:type`} component={End} />
+        <Route path={`${process.env.PUBLIC_URL}/game`} component={Game} />
+        <Route
+          path={`${process.env.PUBLIC_URL}/tutorial`}
+          component={Tutorial}
+        />
+        <Route path={`${process.env.PUBLIC_URL}/`} component={Home} />
       </Switch>
     </Router>
   );
