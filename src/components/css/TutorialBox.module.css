@@ -10,6 +10,11 @@
   margin-bottom: 60px;
   padding: 50px;
   position: relative;
+  transition: 0.5s ease-in-out;
+}
+
+.tutorialBox:hover {
+  transform: scale(1.05);
 }
 
 .title {
