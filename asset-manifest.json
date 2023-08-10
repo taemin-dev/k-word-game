@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/k-word-game/static/css/main.f46877f3.css",
-    "main.js": "/k-word-game/static/js/main.056e7141.js",
+    "main.js": "/k-word-game/static/js/main.af5a22ff.js",
     "index.html": "/k-word-game/index.html",
     "main.f46877f3.css.map": "/k-word-game/static/css/main.f46877f3.css.map",
-    "main.056e7141.js.map": "/k-word-game/static/js/main.056e7141.js.map"
+    "main.af5a22ff.js.map": "/k-word-game/static/js/main.af5a22ff.js.map"
   },
   "entrypoints": [
     "static/css/main.f46877f3.css",
-    "static/js/main.056e7141.js"
+    "static/js/main.af5a22ff.js"
   ]
 }
