@@ -9,9 +9,9 @@ function Home() {
       <Link to="/tutorial">
         <Button className={styles.button} text="게임 설명" />
       </Link>
-      <a href={`${process.env.PUBLIC_URL}/game`}>
+      <Link to="/game">
         <Button className={styles.button} text="게임 시작" />
-      </a>
+      </Link>
     </div>
   );
 }

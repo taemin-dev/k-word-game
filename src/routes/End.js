@@ -28,14 +28,14 @@ function End() {
           text="홈"
         />
       </Link>
-      <a href={`${process.env.PUBLIC_URL}/game`}>
+      <Link to="/game">
         <Button
           className={styles.button}
           bgColor1={type === "clear" ? "#448aff" : "#333333"}
           bgColor2={type === "clear" ? "#b3e5fc" : "#666666"}
           text={type === "clear" ? "게임 시작" : "다시 도전"}
         />
-      </a>
+      </Link>
     </div>
   );
 }
