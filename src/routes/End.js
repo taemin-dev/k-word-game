@@ -28,7 +28,7 @@ function End() {
           text="홈"
         />
       </Link>
-      <a href="/game">
+      <a href={`${process.env.PUBLIC_URL}/game`}>
         <Button
           className={styles.button}
           bgColor1={type === "clear" ? "#448aff" : "#333333"}
