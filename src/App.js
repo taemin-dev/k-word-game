@@ -6,15 +6,12 @@ import End from "./routes/End";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route path={`${process.env.PUBLIC_URL}/game/:type`} component={End} />
-        <Route path={`${process.env.PUBLIC_URL}/game`} component={Game} />
-        <Route
-          path={`${process.env.PUBLIC_URL}/tutorial`}
-          component={Tutorial}
-        />
-        <Route path={`${process.env.PUBLIC_URL}/`} component={Home} />
+        <Route path="/game/:type" component={End} />
+        <Route path="/game" component={Game} />
+        <Route path="/tutorial" component={Tutorial} />
+        <Route path="/" component={Home} />
       </Switch>
     </Router>
   );
