@@ -9,6 +9,7 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 function Game() {
   const [count, setCount] = useState(0);
+  const [banned, setBanned] = useState([]);
   const [words, setWords] = useState([]);
   const [round, setRound] = useState(1);
   const [clicked, setClicked] = useState(false);
@@ -18,20 +19,36 @@ function Game() {
   const [wrong, setWrong] = useState(false);
 
   const { chinese, pureK } = wordsJson;
-  const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
+  const randomChineseWord = () =>
+    chinese[Math.floor(Math.random() * chinese.length)];
+  const randomPureKWord = () => pureK[Math.floor(Math.random() * pureK.length)];
   const changeWords = () => {
-    console.log(chinese.length, pureK.length);
-    if (chinese.length >= 3 && pureK.length >= 1) {
-      const newChinese = shuffle(chinese);
-      const newPureK = shuffle(pureK);
-      const newWords = shuffle([
-        newChinese.pop(),
-        newChinese.pop(),
-        newChinese.pop(),
-        newPureK.pop(),
-      ]);
+    if (chinese.length + pureK.length - banned.length > 0) {
+      let newChinese = [];
+      let newPureK = [];
+      let choose = null;
+
+      while (newChinese.length < 3) {
+        choose = randomChineseWord();
+        if (!banned.includes(choose)) {
+          newChinese.push(choose);
+          banned.push(choose);
+        }
+      }
+
+      while (newPureK.length < 1) {
+        choose = randomPureKWord();
+        if (!banned.includes(choose)) {
+          newPureK.push(choose);
+          banned.push(choose);
+        }
+      }
+
+      let newWords = [...newChinese, ...newPureK];
+
       setWords(newWords);
-      setCount(chinese.length + pureK.length);
+
+      setCount(chinese.length + pureK.length - banned.length);
     } else {
       setOver(true);
     }
@@ -51,7 +68,6 @@ function Game() {
   const clickChange = () => setClicked((prev) => !prev);
   const correctChange = () => setCorrect((prev) => !prev);
   const wrongChange = () => setWrong((prev) => !prev);
-  //const countdown = () => setCount((prev) => prev - 4);
   const chineseOnClick = (event) => {
     if (!clicked) {
       clickChange();
@@ -59,7 +75,6 @@ function Game() {
       setTimeout(clickChange, 3000);
       setTimeout(wrongChange, 3000);
       setTimeout(changeWords, 3000);
-      //setTimeout(countdown, 3000);
       if (round > 1) {
         setTimeout(roundDown, 3000);
       }
@@ -71,7 +86,6 @@ function Game() {
       correctChange();
       setTimeout(clickChange, 3000);
       setTimeout(correctChange, 3000);
-      //setTimeout(countdown, 3000);
       if (round < 5) {
         setTimeout(changeWords, 3000);
         setTimeout(roundUp, 3000);
